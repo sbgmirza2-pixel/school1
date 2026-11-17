@@ -80,9 +80,7 @@ export default function MultiSchool() {
         
         {/* Section Header (Center Aligned) */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0077F5] text-xs font-bold tracking-wider uppercase shadow-sm">
-            🌐 MULTI-SCHOOL SAAS ARCHITECTURE
-          </div>
+          
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#12151C] leading-[1.12]">
             One Platform. Multiple Schools. <span className="text-[#0077F5]">Independent Management.</span>

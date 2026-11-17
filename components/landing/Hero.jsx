@@ -2,6 +2,16 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { 
+  Zap, 
+  ArrowRight, 
+  Play, 
+  Check, 
+  LayoutDashboard, 
+  GraduationCap, 
+  CreditCard, 
+  X 
+} from 'lucide-react';
 
 export default function Hero() {
   const router = useRouter();
@@ -21,7 +31,8 @@ export default function Hero() {
             
             {/* Eyebrow Text */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0077F5] text-xs font-bold tracking-wider uppercase shadow-sm">
-              ⚡ SMART SCHOOL MANAGEMENT SOFTWARE
+              <Zap className="w-3.5 h-3.5 fill-[#0077F5]" />
+              <span>SMART SCHOOL MANAGEMENT SOFTWARE</span>
             </div>
 
             {/* Main Title */}
@@ -42,34 +53,41 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <button 
                 onClick={() => router.push('/login')}
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#0077F5] hover:bg-blue-600 font-bold rounded-xl shadow-xl shadow-[#0077F5]/20 transition-all duration-300 hover:-translate-y-0.5 text-sm text-white"
+                className="w-full sm:w-auto px-7 py-3.5 bg-[#0077F5] hover:bg-blue-600 font-bold rounded-xl shadow-xl shadow-[#0077F5]/20 transition-all duration-300 hover:-translate-y-0.5 text-sm text-white inline-flex items-center justify-center gap-2"
               >
-                Request a Free Demo →
+                <span>Request a Free Demo</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
               
               <button 
                 onClick={() => setIsVideoOpen(true)}
                 className="w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-gray-50 font-bold rounded-xl border border-gray-300 shadow-sm transition-all duration-300 hover:-translate-y-0.5 text-sm text-[#12151C] flex items-center justify-center gap-2"
               >
-                <span className="w-6 h-6 rounded-full bg-blue-50 text-[#0077F5] flex items-center justify-center text-xs font-extrabold border border-blue-200">▶</span>
-                Watch video
+                <span className="w-6 h-6 rounded-full bg-blue-50 text-[#0077F5] flex items-center justify-center border border-blue-200">
+                  <Play className="w-3 h-3 fill-[#0077F5] ml-0.5" />
+                </span>
+                <span>Watch video</span>
               </button>
             </div>
 
             {/* Supporting Highlights Badges */}
             <div className="pt-4 border-t border-gray-200">
-              <div className="grid grid-cols-2 gap-2 text-xs font-medium text-gray-700">
+              <div className="grid grid-cols-2 gap-2.5 text-xs font-medium text-gray-700">
                 <div className="flex items-center gap-2">
-                  <span className="text-[#0077F5] font-bold">✓</span> Complete School Management
+                  <Check className="w-4 h-4 text-[#0077F5] stroke-[2.5] shrink-0" />
+                  <span>Complete School Management</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#0077F5] font-bold">✓</span> Multi-School SaaS Platform
+                  <Check className="w-4 h-4 text-[#0077F5] stroke-[2.5] shrink-0" />
+                  <span>Multi-School SaaS Platform</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#0077F5] font-bold">✓</span> Centralized School Dashboard
+                  <Check className="w-4 h-4 text-[#0077F5] stroke-[2.5] shrink-0" />
+                  <span>Centralized School Dashboard</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#0077F5] font-bold">✓</span> Role-Based User Access
+                  <Check className="w-4 h-4 text-[#0077F5] stroke-[2.5] shrink-0" />
+                  <span>Role-Based User Access</span>
                 </div>
               </div>
             </div>
@@ -114,27 +132,31 @@ export default function Hero() {
                     <div className="space-y-1">
                       <button 
                         onClick={() => setActiveTab('overview')} 
-                        className={`w-full text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'overview' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
+                        className={`w-full flex items-center gap-2 text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'overview' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
                       >
-                        📊 Overview
+                        <LayoutDashboard className="w-3.5 h-3.5 shrink-0" />
+                        <span>Overview</span>
                       </button>
                       <button 
                         onClick={() => setActiveTab('students')} 
-                        className={`w-full text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'students' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
+                        className={`w-full flex items-center gap-2 text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'students' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
                       >
-                        🎓 Students
+                        <GraduationCap className="w-3.5 h-3.5 shrink-0" />
+                        <span>Students</span>
                       </button>
                       <button 
                         onClick={() => setActiveTab('fees')} 
-                        className={`w-full text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'fees' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
+                        className={`w-full flex items-center gap-2 text-left text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition ${activeTab === 'fees' ? 'bg-[#0077F5] text-white font-bold shadow-sm' : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`}
                       >
-                        💳 Fee Challans
+                        <CreditCard className="w-3.5 h-3.5 shrink-0" />
+                        <span>Fee Challans</span>
                       </button>
                     </div>
                   </div>
 
-                  <div className="text-[9px] text-emerald-400 bg-emerald-950/40 px-2 py-1 rounded border border-emerald-800/50 text-center font-medium animate-pulse">
-                    ● Active System
+                  <div className="text-[9px] text-emerald-400 bg-emerald-950/40 px-2 py-1 rounded border border-emerald-800/50 flex items-center justify-center gap-1.5 font-medium animate-pulse">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+                    <span>Active System</span>
                   </div>
                 </div>
 
@@ -235,7 +257,13 @@ export default function Hero() {
           <div className="bg-white rounded-2xl max-w-2xl w-full p-4 overflow-hidden shadow-2xl relative">
             <div className="flex justify-between items-center mb-3 px-2">
               <h3 className="text-sm font-bold text-[#12151C]">DevNixEdu System Walkthrough</h3>
-              <button onClick={() => setIsVideoOpen(false)} className="text-gray-500 hover:text-black text-lg font-bold">✕</button>
+              <button 
+                onClick={() => setIsVideoOpen(false)} 
+                className="text-gray-500 hover:text-black p-1 rounded-lg hover:bg-gray-100 transition"
+                aria-label="Close modal"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
             <div className="aspect-video bg-gray-900 rounded-xl flex items-center justify-center text-white text-xs">
               [ Video Demo Player — DevNixEdu School Management Platform ]

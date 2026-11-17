@@ -86,12 +86,10 @@ export default function DashboardPreview() {
         
         {/* Section Header (Center Aligned, Single Line Heading) */}
         <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0077F5] text-xs font-bold tracking-wider uppercase shadow-sm">
-            <Sparkles className="w-3.5 h-3.5" /> DASHBOARD PREVIEW
-          </div>
+          
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#12151C] leading-[1.12] whitespace-nowrap">
-            Your School Information. <span className="text-[#0077F5]">All in One Dashboard.</span>
+            Your School Information. <br /> <span className="text-[#0077F5]">All in One Dashboard.</span>
           </h2>
 
           <p className="text-gray-700 text-base sm:text-lg font-medium leading-relaxed pt-1">
